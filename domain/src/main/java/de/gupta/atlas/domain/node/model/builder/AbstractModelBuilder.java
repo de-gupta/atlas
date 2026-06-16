@@ -2,21 +2,22 @@ package de.gupta.atlas.domain.node.model.builder;
 
 
 import de.gupta.aletheia.functional.Unfolding;
+import de.gupta.atlas.domain.node.model.BaseDomainModel;
 import de.gupta.atlas.domain.node.model.builder.result.BuilderResult;
 import de.gupta.atlas.domain.node.model.builder.result.BuilderResultFactory;
 import de.gupta.validation.aegis.api.validation.result.ValidationResult;
 import de.gupta.validation.aegis.api.validator.Validatable;
 
-public abstract class AbstractModelBuilder<Model extends Validatable> implements ModelBuilder<Model>
+public abstract class AbstractModelBuilder<DomainModel extends BaseDomainModel> implements ModelBuilder<DomainModel>
 {
 	@Override
-	public final BuilderResult<Model> build()
+	public final BuilderResult<DomainModel> build()
 	{
 		setOptionalFieldsToDefaultValues();
-		Model model = doBuild();
-		return Unfolding.beckon(model)
+		DomainModel domainModel = doBuild();
+		return Unfolding.beckon(domainModel)
 		                .metamorphose(Validatable::validate)
-		                .coronate(ValidationResult::isValid, v -> BuilderResultFactory.success(v, model),
+		                .coronate(ValidationResult::isValid, v -> BuilderResultFactory.success(v, domainModel),
 								BuilderResultFactory::failure);
 	}
 
@@ -24,5 +25,5 @@ public abstract class AbstractModelBuilder<Model extends Validatable> implements
 	{
 	}
 
-	protected abstract Model doBuild();
+	protected abstract DomainModel doBuild();
 }
