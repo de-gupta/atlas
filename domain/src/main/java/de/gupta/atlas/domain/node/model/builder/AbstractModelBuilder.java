@@ -1,9 +1,9 @@
-package de.gupta.atlas.domain.model.builder;
+package de.gupta.atlas.domain.node.model.builder;
 
 
 import de.gupta.aletheia.functional.Unfolding;
-import de.gupta.atlas.domain.model.builder.result.BuilderResult;
-import de.gupta.atlas.domain.model.builder.result.BuilderResultFactory;
+import de.gupta.atlas.domain.node.model.builder.result.BuilderResult;
+import de.gupta.atlas.domain.node.model.builder.result.BuilderResultFactory;
 import de.gupta.validation.aegis.api.validation.result.ValidationResult;
 import de.gupta.validation.aegis.api.validator.Validatable;
 

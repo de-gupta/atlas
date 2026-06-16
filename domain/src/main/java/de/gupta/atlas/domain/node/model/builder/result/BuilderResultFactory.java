@@ -1,4 +1,4 @@
-package de.gupta.atlas.domain.model.builder.result;
+package de.gupta.atlas.domain.node.model.builder.result;
 
 
 import de.gupta.validation.aegis.api.validation.result.ValidationResult;

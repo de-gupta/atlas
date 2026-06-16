@@ -1,4 +1,4 @@
-package de.gupta.atlas.domain.model.builder.result;
+package de.gupta.atlas.domain.node.model.builder.result;
 
 import de.gupta.aletheia.functional.Unfolding;
 import de.gupta.commons.utility.exception.ExceptionHelper;
@@ -12,7 +12,7 @@ record FailedBuilderResult<Model>(ValidationResult validation) implements Builde
 	{
 		Unfolding.beckon(validation)
 		         .interdict(ValidationResult::isValid,
-				         ExceptionHelper.iaeFrom("Validation must be invalid for a failure result"));
+						 ExceptionHelper.iaeFrom("Validation must be invalid for a failure result"));
 	}
 
 	@Override

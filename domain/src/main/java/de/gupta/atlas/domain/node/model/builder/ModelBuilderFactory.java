@@ -1,4 +1,4 @@
-package de.gupta.atlas.domain.model.builder;
+package de.gupta.atlas.domain.node.model.builder;
 
 public interface ModelBuilderFactory<Model, V extends ModelBuilder<? extends Model>>
 {
