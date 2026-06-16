@@ -11,11 +11,16 @@
     </parent>
 
     <artifactId>atlas</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>atlas</name>
     <description>A library for implementing clean architecture based operations on a domain substrate</description>
     <url>https://github.com/de-gupta/atlas.git</url>
+
+    <modules>
+        <module>domain</module>
+    </modules>
 
     <scm>
         <developerConnection>scm:git:ssh://git@github.com/de-gupta/atlas.git</developerConnection>
