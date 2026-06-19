@@ -1,9 +1,10 @@
 package de.gupta.atlas.domain.node.model.builder;
 
 
-import de.gupta.atlas.domain.node.model.builder.result.BuilderResult;
+import de.gupta.validation.aegis.api.validation.outcome.Outcome;
 
+@FunctionalInterface
 public interface ModelBuilder<Model>
 {
-	BuilderResult<Model> build();
+	Outcome<Model> build();
 }

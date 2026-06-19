@@ -1,4 +1,4 @@
-package de.gupta.atlas.domain.node.model.identified;
+package de.gupta.atlas.domain.node.useCase.identification.identified;
 
 public record IdentifiedModel<ID, Model>(ID id, Model model)
 {
